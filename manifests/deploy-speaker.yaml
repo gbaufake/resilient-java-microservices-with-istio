@@ -16,9 +16,12 @@ spec:
       containers:
       - name: microservice-speaker
         #change the image name
-        image: journeycode/microservice-speaker
+        image: gbaufake/microservice-speaker
         ports:
           - containerPort: 9080
+      securityContext:
+          privileged: true
+          runAsUser: 1001
 ---
 apiVersion: v1
 kind: Service

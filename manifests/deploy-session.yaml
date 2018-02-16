@@ -16,9 +16,12 @@ spec:
       containers:
       - name: microservice-session
         #change the image name
-        image: journeycode/microservice-session
+        image: gbaufake/microservice-session
         ports:
           - containerPort: 9080
+      securityContext:
+          privileged: true
+          runAsUser: 1001
 
 ---
 apiVersion: v1
